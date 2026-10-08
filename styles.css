@@ -266,7 +266,7 @@ button {
 }
 
 .answer-button.is-wrong.is-animating .answer-fill {
-  animation: answer-sweep 1.5s linear forwards;
+  animation: answer-sweep 0.76s linear forwards;
 }
 
 .answer-button.is-correct {
@@ -275,7 +275,7 @@ button {
 }
 
 .answer-button.is-correct.is-animating .answer-fill {
-  animation: answer-sweep 2s linear forwards;
+  animation: answer-sweep 0.76s linear forwards;
 }
 
 .answer-text {

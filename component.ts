@@ -24,8 +24,8 @@ interface QuizState {
   currentAlternatives: Alternative[];
 }
 
-const CORRECT_ANIMATION_DURATION_MS = 2_000;
-const WRONG_ANIMATION_DURATION_MS = 1_500;
+const CORRECT_ANIMATION_DURATION_MS = 760;
+const WRONG_ANIMATION_DURATION_MS = 760;
 
 const makeAlternatives = (
   entries: ReadonlyArray<readonly [AlternativeId, string]>,

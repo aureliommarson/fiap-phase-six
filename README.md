@@ -196,8 +196,8 @@ As alternativas são embaralhadas uma única vez quando a questão é preparada.
 
 Cada alternativa é um elemento `<button>` com um preenchimento interno posicionado de forma absoluta. Ao responder, esse preenchimento cresce horizontalmente usando `transform: scaleX()` e `transform-origin: left`.
 
-- **Resposta incorreta:** preenchimento vermelho por 1,5 segundo e retorno completo ao estado normal, permanecendo na mesma questão.
-- **Resposta correta:** preenchimento verde por 2 segundos, bloqueio temporário de todas as opções e avanço somente após o término da animação.
+- **Resposta incorreta:** preenchimento vermelho por 0,76 segundo e retorno completo ao estado normal, permanecendo na mesma questão.
+- **Resposta correta:** preenchimento verde por 0,76 segundo, bloqueio temporário de todas as opções e avanço somente após o término da animação.
 
 O estado `isAnswering` impede que cliques rápidos façam a aplicação avançar mais de uma questão.
 
