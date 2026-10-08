@@ -77,7 +77,7 @@ O dataset ativo contém 20 questões. A quantidade apresentada na interface é c
 ```text
 fiap-phase-six/
 ├── .gitignore           # Arquivos locais e gerados ignorados pelo Git
-├── component.html       # Estrutura HTML principal e carregamento da aplicação
+├── index.html           # Estrutura HTML principal e carregamento da aplicação
 ├── component.ts         # Dataset, estado, renderização e regras do quiz
 ├── styles.css           # Tailwind CSS v4, tema visual e animações
 ├── vite.config.ts       # Integração do Tailwind e entrada do build
@@ -89,7 +89,7 @@ fiap-phase-six/
 
 ## Arquitetura da aplicação
 
-### `component.html`
+### `index.html`
 
 Contém somente a estrutura essencial da página:
 
@@ -155,7 +155,7 @@ O Tailwind CSS é integrado diretamente ao Vite por meio do plugin oficial:
 import tailwindcss from "@tailwindcss/vite";
 ```
 
-O arquivo `component.html` é definido como a entrada do build. Isso mantém a estrutura solicitada sem a necessidade de um `index.html` adicional.
+O arquivo `index.html` é a entrada padrão do Vite e permite que o GitHub Pages abra a aplicação diretamente pela raiz do site.
 
 ## Embaralhamento das alternativas
 
@@ -267,7 +267,7 @@ npm run dev
 O Vite iniciará o servidor e abrirá automaticamente:
 
 ```text
-http://localhost:5173/component.html
+http://localhost:5173/
 ```
 
 Alterações nos arquivos são atualizadas automaticamente durante o desenvolvimento.
@@ -276,7 +276,7 @@ Alterações nos arquivos são atualizadas automaticamente durante o desenvolvim
 
 | Comando | Descrição |
 | --- | --- |
-| `npm run dev` | Inicia o servidor de desenvolvimento e abre `component.html` |
+| `npm run dev` | Inicia o servidor de desenvolvimento e abre a aplicação |
 | `npm run typecheck` | Executa a validação estrita do TypeScript sem gerar arquivos |
 | `npm run build` | Executa o typecheck e gera o build otimizado em `dist/` |
 | `npm run preview` | Serve localmente o resultado do build para conferência |
@@ -298,6 +298,18 @@ Para visualizar o build:
 ```bash
 npm run preview
 ```
+
+## Publicação no GitHub Pages
+
+O workflow `.github/workflows/deploy-pages.yml` compila e publica automaticamente a pasta `dist/` após cada push para a branch `main`.
+
+O Vite usa o caminho-base `/fiap-phase-six/`, necessário para carregar corretamente os arquivos CSS e JavaScript no endereço:
+
+```text
+https://aureliommarson.github.io/fiap-phase-six/
+```
+
+No GitHub, a fonte de publicação deve estar configurada em **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 
 ## Como adicionar uma questão
 

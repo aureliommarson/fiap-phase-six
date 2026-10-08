@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Quiz interativo para estudos dos conteúdos da FIAP",
   "scripts": {
-    "dev": "vite --open /component.html",
+    "dev": "vite --open",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --open /component.html"
+    "preview": "vite preview --open"
   },
   "keywords": [],
   "author": "",
