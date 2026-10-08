@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background: #000;
+  color: #f4f4f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  background: #000;
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at 50% -15%, rgb(220 38 38 / 0.14), transparent 36rem),
+    #000;
+}
+
+button {
+  font: inherit;
+}
+
+.screen-shell {
+  width: min(100%, 56rem);
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.centered-screen {
+  display: grid;
+  place-items: center;
+}
+
+.hero-card {
+  width: min(100%, 42rem);
+  padding: clamp(1.75rem, 6vw, 3.5rem);
+  border: 1px solid #27272a;
+  border-radius: 1.5rem;
+  background: rgb(17 17 17 / 0.94);
+  box-shadow: 0 2rem 7rem rgb(0 0 0 / 0.65);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: #f43f5e;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.hero-copy {
+  max-width: 32rem;
+  margin: 1.25rem auto 0;
+  color: #a1a1aa;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.7;
+}
+
+.question-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: #d4d4d8;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.question-count::before {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #dc2626;
+  box-shadow: 0 0 1rem rgb(220 38 38 / 0.8);
+  content: "";
+}
+
+.primary-button {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0.85rem 2rem;
+  border: 1px solid #ef4444;
+  border-radius: 0.875rem;
+  background: #dc2626;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.primary-button:hover {
+  background: #ef4444;
+  box-shadow: 0 0.75rem 2rem rgb(220 38 38 / 0.24);
+  transform: translateY(-2px);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+.primary-button:focus-visible,
+.answer-button:focus-visible {
+  outline: 3px solid #fda4af;
+  outline-offset: 3px;
+}
+
+.quiz-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quiz-panel {
+  width: 100%;
+  padding-block: 1rem;
+}
+
+.block-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.block-number {
+  color: #f43f5e;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.block-name {
+  color: #a1a1aa;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #d4d4d8;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.progress-percent {
+  color: #71717a;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-track {
+  height: 0.375rem;
+  margin-top: 0.75rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #27272a;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #dc2626, #f43f5e);
+  box-shadow: 0 0 1rem rgb(244 63 94 / 0.38);
+  transition: width 350ms ease;
+}
+
+.question-card {
+  margin-top: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid #27272a;
+  border-radius: 1.25rem;
+  background: rgb(17 17 17 / 0.94);
+}
+
+.question-text {
+  margin: 0;
+  color: #f4f4f5;
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.55;
+  white-space: pre-line;
+}
+
+.answers-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.answer-button {
+  --answer-color: transparent;
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 4.25rem;
+  overflow: hidden;
+  padding: 1rem 1.125rem;
+  border: 1px solid #27272a;
+  border-radius: 1rem;
+  background: #18181b;
+  color: #e4e4e7;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.answer-button:hover:not(:disabled) {
+  border-color: #52525b;
+  background: #202024;
+  transform: translateY(-1px);
+}
+
+.answer-button:disabled {
+  cursor: default;
+}
+
+.answer-fill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--answer-color);
+  opacity: 0.88;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.answer-button.is-wrong {
+  --answer-color: #dc2626;
+  border-color: #ef4444;
+}
+
+.answer-button.is-wrong.is-animating .answer-fill {
+  animation: answer-sweep 1.5s linear forwards;
+}
+
+.answer-button.is-correct {
+  --answer-color: #16a34a;
+  border-color: #22c55e;
+}
+
+.answer-button.is-correct.is-animating .answer-fill {
+  animation: answer-sweep 2s linear forwards;
+}
+
+.answer-text {
+  position: relative;
+  z-index: 1;
+}
+
+.answer-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.finish-score {
+  margin-top: 1.75rem;
+  color: #fff;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+@keyframes answer-sweep {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .screen-shell {
+    padding: 1rem;
+  }
+
+  .quiz-panel {
+    padding-block: 0.5rem;
+  }
+
+  .question-card {
+    border-radius: 1rem;
+  }
+
+  .answer-button {
+    padding-inline: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
