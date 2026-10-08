@@ -32,7 +32,7 @@ O projeto não utiliza React, Vue, Angular, Next.js, jQuery, Bootstrap ou biblio
 ## Funcionalidades
 
 - Tela inicial com contagem dinâmica de questões.
-- 25 questões distribuídas em sete blocos temáticos.
+- 20 questões distribuídas em 12 temas da fase 6.
 - Perguntas mantidas sempre na ordem definida no dataset.
 - Alternativas embaralhadas com o algoritmo Fisher–Yates.
 - Preservação da letra original de cada alternativa depois do embaralhamento.
@@ -52,25 +52,31 @@ O projeto não utiliza React, Vue, Angular, Next.js, jQuery, Bootstrap ou biblio
 - Navegação por teclado e foco visível.
 - Suporte a `prefers-reduced-motion`.
 
-## Blocos de conteúdo
+## Conteúdo do simulado
 
-O dataset contém 25 questões. A quantidade apresentada na interface é calculada usando `questions.length`, sem valores fixos no HTML.
+O dataset ativo contém 20 questões. A quantidade apresentada na interface é calculada usando `questions.length`, sem valores fixos no HTML.
 
-| Bloco | Tema | Questões |
-| --- | --- | ---: |
-| 1 | Deployment | 3 |
-| 2 | Azure DevOps | 4 |
-| 3 | Docker, CI e CD | 3 |
-| 4 | Ciclo de vida e modelos de software | 3 |
-| 5 | Testes de software | 4 |
-| 6 | Quality Assurance (QA) | 3 |
-| 7 | Pitch e Startups | 5 |
-|  | **Total** | **25** |
+| Tema | Questões |
+| --- | ---: |
+| Ciclo de vida de software | 1 |
+| Azure DevOps | 3 |
+| Integração contínua | 2 |
+| Deployment | 3 |
+| Testes de inteligência artificial | 1 |
+| Pitch e Startups | 3 |
+| Testes de software | 2 |
+| Entrega contínua | 1 |
+| Modelos de processo de software | 1 |
+| Modelo Cascata | 1 |
+| Manutenção de software | 1 |
+| Quality Assurance (QA) | 1 |
+| **Total** | **20** |
 
 ## Estrutura do projeto
 
 ```text
 fiap-phase-six/
+├── .gitignore           # Arquivos locais e gerados ignorados pelo Git
 ├── component.html       # Estrutura HTML principal e carregamento da aplicação
 ├── component.ts         # Dataset, estado, renderização e regras do quiz
 ├── styles.css           # Tailwind CSS v4, tema visual e animações
@@ -78,7 +84,7 @@ fiap-phase-six/
 ├── tsconfig.json        # Configuração estrita do TypeScript
 ├── package.json         # Metadados, scripts e dependências
 ├── package-lock.json    # Versões exatas instaladas pelo npm
-└── dist/                # Resultado gerado pelo build de produção
+└── dist/                # Resultado local do build (ignorado pelo Git)
 ```
 
 ## Arquitetura da aplicação
@@ -299,9 +305,9 @@ As questões são declaradas no array `questions`, dentro de `component.ts`. Uma
 
 ```ts
 {
-  block: "BLOCO 8",
+  block: "QUESTÃO 21",
   topic: "NOVO TEMA",
-  number: 1,
+  number: 21,
   question: "Texto da pergunta",
   alternatives: makeAlternatives([
     ["A", "Primeira alternativa"],
@@ -353,8 +359,8 @@ O projeto foi conferido com os seguintes resultados:
 - Tailwind CSS v4 integrado ao Vite: aprovado;
 - build de produção: aprovado;
 - servidor de desenvolvimento: resposta HTTP 200;
-- gabarito das 25 questões: conferido;
-- questão com somente quatro alternativas: preservada;
+- gabarito das 20 questões: conferido;
+- todas as questões possuem cinco alternativas;
 - dependências npm: nenhuma vulnerabilidade encontrada na última auditoria.
 
 ## Licença
